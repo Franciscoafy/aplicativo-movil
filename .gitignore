@@ -59,3 +59,8 @@ docs/_build/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Env secrets
+.env
+.env.*
+

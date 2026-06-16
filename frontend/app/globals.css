@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0b1326;
+    color: #dae2fd;
+    font-family: 'Hanken Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    color: #dae2fd;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-modal {
+  background: rgba(23, 31, 51, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 24px;
+}
+
+.glass-input {
+  background: rgba(6, 14, 32, 0.5);
+  border: 1px solid rgba(133, 147, 152, 0.3);
+  border-radius: 8px;
+  color: #dae2fd;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  outline: none;
+}
+
+/* Neon Glows */
+.glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 163, 0.6);
+}
+
+.glow-red {
+  text-shadow: 0 0 10px rgba(255, 49, 49, 0.6);
+}
+
+.glow-gold {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.shadow-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.shadow-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+}
+
+/* Pulsing Indicators */
+@keyframes pulse-glow-green {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(0, 255, 163, 0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 163, 0.8);
+    opacity: 0.9;
+  }
+}
+
+.pulse-active {
+  animation: pulse-glow-green 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow-red {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(255, 49, 49, 0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.8);
+    opacity: 0.9;
+  }
+}
+
+.pulse-critical {
+  animation: pulse-glow-red 2s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1326;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171f33;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* Map Container Styling */
+.maplibre-glow-popup .maplibregl-popup-content {
+  background: rgba(23, 31, 51, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  color: #dae2fd;
+  padding: 12px;
+}
+.maplibre-glow-popup .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: rgba(23, 31, 51, 0.9);
+}
+
+/* ==================== SYSTEM LIGHT THEME OVERRIDES ==================== */
+html.light-theme,
+.light-theme body,
+.light-theme #app-root {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.light-theme .bg-background,
+.light-theme div.bg-\[\#0b1326\],
+.light-theme div.bg-\[\#0c162d\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.light-theme .glass-card,
+.light-theme div.bg-\[\#171f33\]\/30,
+.light-theme div.bg-\[\#171f33\]\/40 {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05) !important;
+}
+
+.light-theme .glass-card text,
+.light-theme .glass-card h1,
+.light-theme .glass-card h2,
+.light-theme .glass-card h3,
+.light-theme .glass-card h4,
+.light-theme .glass-card h5,
+.light-theme .glass-card h6 {
+  color: #0f172a !important;
+}
+
+.light-theme .text-white {
+  color: #0f172a !important;
+}
+
+.light-theme .text-\[\#dae2fd\] {
+  color: #1e293b !important;
+}
+
+.light-theme .text-\[\#859398\] {
+  color: #64748b !important;
+}
+
+.light-theme div.sticky,
+.light-theme header,
+.light-theme div.bg-\[\#0b1326\]\/95 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
+}
+
+.light-theme div.sticky * {
+  color: #1e293b !important;
+}
+
+.light-theme div.sticky label {
+  color: #64748b !important;
+}
+
+.light-theme aside,
+.light-theme nav,
+.light-theme div.bg-\[\#060e20\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme nav a,
+.light-theme aside a {
+  color: #475569 !important;
+}
+
+.light-theme nav a.text-\[\#00d4ff\],
+.light-theme nav a.text-primary,
+.light-theme aside a.text-\[\#00d4ff\],
+.light-theme aside a.text-primary {
+  color: #0284c7 !important;
+}
+
+.light-theme select,
+.light-theme input,
+.light-theme .glass-input,
+.light-theme select.glass-input,
+.light-theme div.bg-\[\#060e20\]\/60 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light-theme button.bg-\[\#060e20\]\/60 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme div.absolute.bg-\[\#0c162d\]\/95,
+.light-theme div.absolute.bg-\[\#0c162d\] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+.light-theme div.absolute.bg-\[\#0c162d\]\/95 button,
+.light-theme div.absolute.bg-\[\#0c162d\] button {
+  color: #64748b !important;
+}
+
+.light-theme svg text {
+  fill: #475569 !important;
+}
+
+.light-theme svg text.fill-\[\#00d4ff\],
+.light-theme svg text[fill="#00d4ff"] {
+  fill: #0284c7 !important;
+}
+
+.light-theme svg text.fill-\[\#ffcd56\],
+.light-theme svg text[fill="#ffcd56"] {
+  fill: #b45309 !important;
+}
+
+.light-theme tr.border-b {
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme tbody.divide-y tr {
+  border-color: #f1f5f9 !important;
+}
+
+.light-theme table {
+  color: #334155 !important;
+}
+
+.light-theme tr.bg-\[\#060e20\]\/40 {
+  background-color: #f8fafc !important;
+}
+
+.light-theme td {
+  color: #1e293b !important;
+}
+
+.light-theme td.text-\[\#00d4ff\] {
+  color: #0284c7 !important;
+}
+
+.light-theme rect[fill="#060e20"],
+.light-theme rect.fill-\[\#060e20\] {
+  fill: #f1f5f9 !important;
+}
+
+.light-theme rect[fill="#1b2d4f"] {
+  fill: #cbd5e1 !important;
+}
+
+.light-theme circle[stroke="#ffffff"] {
+  stroke: #cbd5e1 !important;
+}
+
