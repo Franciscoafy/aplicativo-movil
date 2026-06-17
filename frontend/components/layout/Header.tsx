@@ -3,6 +3,7 @@
 import React from "react";
 import { Waves, Search, User } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Show, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
   const router = useRouter();
@@ -44,14 +45,20 @@ export default function Header() {
         <button id="btn-search-header" className="hover:text-white transition-colors" title="Buscar">
           <Search className="w-5 h-5 text-[#859398]" />
         </button>
-        <button 
-          id="btn-profile-header" 
-          onClick={handleProfileClick}
-          className="hover:text-white transition-colors p-0.5 rounded-full border border-[#859398]/30" 
-          title="Mi Perfil / Salir"
-        >
-          <User className="w-5 h-5 text-[#859398]" />
-        </button>
+        
+        <Show when="signed-in">
+          <UserButton afterSignOutUrl="/" />
+        </Show>
+        <Show when="signed-out">
+          <button 
+            id="btn-profile-header" 
+            onClick={handleProfileClick}
+            className="hover:text-white transition-colors p-0.5 rounded-full border border-[#859398]/30" 
+            title="Mi Perfil / Salir"
+          >
+            <User className="w-5 h-5 text-[#859398]" />
+          </button>
+        </Show>
       </div>
     </header>
   );
