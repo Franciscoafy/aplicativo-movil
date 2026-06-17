@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider, SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +23,27 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased min-h-screen flex flex-col bg-[#0b1326] text-white">
-        <ClerkProvider>
+        <ClerkProvider
+          appearance={{
+            baseTheme: dark,
+            variables: {
+              colorPrimary: "#00d4ff",
+              colorBackground: "#171f33",
+              colorText: "#ffffff",
+              colorInputBackground: "#0b1326",
+              colorInputText: "#ffffff",
+              colorBorder: "#3c494e",
+            },
+            elements: {
+              card: "border border-white/10 glass-card bg-surface-container-lowest/40 backdrop-blur-lg shadow-glow-cyan/20",
+              headerTitle: "font-sora font-bold text-white text-xl",
+              headerSubtitle: "text-[#859398] font-hanken text-xs",
+              socialButtonsBlockButton: "bg-[#171f33] border border-border text-white hover:bg-[#1c273e]",
+              formButtonPrimary: "bg-[#00d4ff] hover:bg-[#00b2d6] text-[#0b1326] font-bold shadow-glow-cyan transition-all duration-200 active:scale-95",
+              footerActionLink: "text-[#00d4ff] hover:text-[#00b2d6]",
+            }
+          }}
+        >
           <div id="app-root" className="flex-1 flex flex-col">
             {/* Cabecera de autenticación Clerk al nivel de la raíz */}
             <header className="w-full bg-[#0b1326]/60 backdrop-blur-md border-b border-[#3c494e]/20 px-4 py-3 flex items-center justify-between font-hanken">
@@ -56,4 +77,3 @@ export default function RootLayout({
     </html>
   );
 }
-
