@@ -46,10 +46,14 @@ export default function RootLayout({
         >
           <div id="app-root" className="flex-1 flex flex-col">
             {/* Cabecera de autenticación Clerk al nivel de la raíz */}
-            <header className="w-full bg-[#0b1326]/60 backdrop-blur-md border-b border-[#3c494e]/20 px-4 py-3 flex items-center justify-between font-hanken">
-              <span className="text-sm font-bold tracking-wide text-white font-sora">
-                WELLMETRY
-              </span>
+            <header className="w-full bg-[#0b1326]/60 backdrop-blur-md border-b border-[#3c494e]/20 px-4 py-2 flex items-center justify-between font-hanken">
+              <div className="h-16 w-44 relative flex items-center justify-start">
+                <img 
+                  src="/logo.png" 
+                  alt="Quantica" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
               <div className="flex items-center gap-3">
                 <Show when="signed-out">
                   <SignInButton mode="modal">

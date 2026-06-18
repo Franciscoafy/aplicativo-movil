@@ -36,7 +36,10 @@ export default function BottomNavigation() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-[#0b1326]/95 backdrop-blur-lg border-t border-[#3c494e]/30 px-1 py-1.5 flex items-center justify-around md:hidden">
+    <nav 
+      className="fixed bottom-0 left-0 right-0 z-40 bg-[#0b1326]/95 backdrop-blur-lg border-t border-[#3c494e]/30 px-1 pt-1.5 flex items-center justify-around md:hidden"
+      style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 0.375rem)" }}
+    >
       {navItems.map((item) => {
         const Icon = item.icon;
         // El tab activo coincide con el inicio de la ruta

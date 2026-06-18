@@ -64,3 +64,8 @@ Thumbs.db
 .env
 .env.*
 
+# Local certificates
+frontend/certificates/
+certificates/
+*.pem
+*.key

@@ -2,7 +2,6 @@
 
 import React from "react";
 import { SignIn } from "@clerk/nextjs";
-import { Droplet } from "lucide-react";
 
 export default function LoginPage() {
   return (
@@ -12,17 +11,15 @@ export default function LoginPage() {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#00d4ff]/5 blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-sm z-10 flex flex-col gap-4 items-center">
-        {/* Logo y Encabezado */}
-        <div className="flex flex-col items-center text-center gap-2 mb-2">
-          <div className="p-3 rounded-2xl bg-[#00d4ff]/10 border border-[#00d4ff]/20 flex items-center justify-center mb-2 shadow-glow-cyan">
-            <Droplet className="w-8 h-8 text-[#00d4ff]" />
+        {/* Logo y Encabezado (Logo agrandado 50%) */}
+        <div className="flex flex-col items-center text-center gap-2 mb-4">
+          <div className="h-24 w-72 relative flex items-center justify-center mb-1">
+            <img 
+              src="/logo.png" 
+              alt="Quantica" 
+              className="h-full w-auto object-contain"
+            />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-white font-sora">
-            WELLMETRY
-            <span className="text-xs uppercase font-mono px-2 py-0.5 ml-2 rounded bg-[#00d4ff]/20 text-[#00d4ff] border border-[#00d4ff]/30 align-middle">
-              DGA
-            </span>
-          </h1>
           <p className="text-xs text-[#859398] font-hanken">
             Plataforma Móvil de Telemetría y Cumplimiento Normativo
           </p>

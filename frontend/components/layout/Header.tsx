@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0b1326]/90 backdrop-blur-md border-b border-[#3c494e]/30 px-4 py-3.5 flex items-center justify-between font-hanken">
+    <header className="md:sticky md:top-0 z-40 w-full bg-[#0b1326]/90 backdrop-blur-md border-b border-[#3c494e]/30 px-4 py-3.5 flex items-center justify-between font-hanken">
       {/* Lado Izquierdo: Ondas + Marca Quantica */}
       <div className="flex items-center gap-2">
         {!logoError ? (

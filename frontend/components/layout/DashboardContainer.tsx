@@ -21,12 +21,12 @@ export default function DashboardContainer({ children }: DashboardContainerProps
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-background text-white">
+    <div className="flex flex-1 bg-background text-white">
       {/* Sidebar - Visible en escritorio/tablet */}
       <Sidebar />
 
       {/* Contenedor Principal */}
-      <div className="flex-1 flex flex-col min-h-screen pb-16 md:pb-0">
+      <div className="flex-1 flex flex-col pb-24 md:pb-0">
         {/* Header - Sticky arriba */}
         <Header />
 
